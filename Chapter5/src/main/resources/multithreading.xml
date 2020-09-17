@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--suite name="thread" parallel="methods" thread-count="2"-->
+<suite name="thread" parallel="tests" thread-count="2">
+    <test name="demo1">
+        <classes>
+            <class name="com.ditcloud.testNG.multithreading.MultiThreadingTestOnXML" />
+        </classes>
+
+    </test>
+
+</suite>
