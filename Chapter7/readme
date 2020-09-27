@@ -1,0 +1,2 @@
+#启动应用
+java -jar ./moco-runner-1.1.0-standalone.jar http -p 12306 -c startupdemo.json
