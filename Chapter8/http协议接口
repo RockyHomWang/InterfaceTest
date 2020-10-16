@@ -1,0 +1,37 @@
+# 在浏览器中如何查看http协议信息头
+    ##直接开发者工具打开即可，例如chrome F12; Electron：ctr/command+shift/option+i
+    ## 切换到 NetWork工具栏，点击任意会话session，即存在请求和响应信息字段。
+
+# 请求头信息字段含义介绍
+    ## Accept: 这个头表示，浏览器告诉服务器它所支持的数据类型；
+    ## Accept-Charset: 这个头表示，浏览器告诉服务器它采用的字符集
+    ## Accept-Encoding: 这个头表示，浏览器告诉服务器它所支持的压缩格式
+    ## Accept-Language：这个头表示，浏览器告诉服务器它所采用的语言
+    ## Host: 这个头表示，浏览器告诉服务器我想访问服务器哪台主机
+    ## If-Modified-Since: 这个头表示，浏览器告诉服务器它缓存数据时间是多少
+    ## Referer:这个头表示，浏览器告诉服务器我是从哪个网页点过来的（防盗链）
+    ## User-Agent: 这个头表示，浏览器告诉服务器我什么时间访问的
+    ## Data: 这个头表示，浏览器告诉服务器我什么时间访问的
+    ## X-Request-With: XMLHttpRequest => 请求方式：X-Request-With:同步请求还是异步请求，整个表示是AJAX异步请求（和架构相关）
+
+# 响应头信息字段含义介绍
+    ## Location: 这个头告诉浏览器你去找谁，配合302状态码使用
+    ## Server: 这个头告诉浏览器服务器类型
+    ## Content-Encoding: 这个头告诉浏览器回送的数据采用的压缩格式
+    ## Content-Type: 这个头告诉浏览器回送的数据类型
+    ## Last-Modified: 这个头告诉浏览器数据的最后修改时间
+    ## Refresh:这个头用于控制浏览器定时刷新（实际上数据推送目前比较多）
+    ## Content-Disposition: 这个头告诉浏览器需要以下载方式打开回送的数据
+    ## Transfer-Encoding: 这个头告诉浏览器数据是以分块形式回送的（界面出现数据有的加载出来，有的没有加载出来）
+
+# cookie（http请求无状态的，保证请求的身份）与session的区别点
+    ## cookie 出现是因为客户端在请求的时候标记身份使用，存储在request header中
+    ## session 存储于服务端，存储形式：文件、数据库等都可以；一般用缓存数据库进行存储，例如redis，好处在于redis有一个机制叫做：过期时间，设置一个key，好处就是不用程序进行维护，key过期，数据就会自动消失，拿session时拿不到，说明就是过期了。
+    ## 一般来说session的验证需要cookie带一个字段来表示这个用户是哪个session
+    ## 一般来说session的验证需要cookie带一个字段来表示这个用户是哪个session，所以当客户端禁用cookie时，session将失效
+
+    ## cookie就是一小段文本信息
+    ## cookie的格式为key:value；key:value
+    ## cookie的值由服务端生成，客户端保存
+
+
