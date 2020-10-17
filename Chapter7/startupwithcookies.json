@@ -1,5 +1,21 @@
 [
   {
+    "description": "这是一个会返回cookies信息的get请求",
+    "request": {
+      "uri": "/getCookies",
+      "method": "get"
+    },
+      "response": {
+        "cookies": {
+          "login": "true",
+          "status": "10000"
+        },
+        "text": "获取cookies成功！"
+      }
+
+  },
+
+  {
     "description": "这是一个带cookie的get请求",
     "request": {
       "uri": "/get/with/cookies",
@@ -18,7 +34,8 @@
       "uri": "/post/with/cookies",
       "method": "post",
       "cookies": {
-        "login": "true"
+        "login": "true",
+        "status": "10000"
       },
       "json": {
         "name": "huhansan",
