@@ -7,8 +7,7 @@
     },
       "response": {
         "cookies": {
-          "login": "true",
-          "status": "10000"
+          "login": "true"
         },
         "text": "获取cookies成功！"
       }
@@ -25,7 +24,8 @@
       }
     },
     "response": {
-      "text": "这是一个需要携带cookie信息才能访问的get请求"
+      "text": "这是一个需要携带cookie信息才能访问的get请求",
+      "status": 200
     }
   },
   {
@@ -34,8 +34,7 @@
       "uri": "/post/with/cookies",
       "method": "post",
       "cookies": {
-        "login": "true",
-        "status": "10000"
+        "login": "true"
       },
       "json": {
         "name": "huhansan",
