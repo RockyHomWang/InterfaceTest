@@ -1,6 +1,5 @@
 package com.ditcloud.testNG;
 
-import org.junit.rules.Timeout;
 import org.testng.annotations.Test;
 
 public class TimeOutTest {

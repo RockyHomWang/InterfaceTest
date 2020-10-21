@@ -75,9 +75,6 @@ public class MyCookiesForGet {
             System.out.println(result);
         }
 
-
-
-
     }
 
 }
