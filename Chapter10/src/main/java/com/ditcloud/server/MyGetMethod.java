@@ -12,14 +12,14 @@ import java.util.Map;
 import java.util.Objects;
 
 @RestController
-@Api(value = "/", description = "这是我实现的所有get方法")
+@Api(value = "/",description = "这是我实现的所有get方法")
 public class MyGetMethod {
 
     @RequestMapping(value = "/getCookies", method = RequestMethod.GET)
     /*
      * 给客户端返回cookies的接口
      */
-    @ApiOperation(value = "通过这个方法可以获取到cookies",httpMethod = "Get")
+    @ApiOperation(value = "通过这个方法可以获取到cookies",httpMethod = "GET")
     public String getCookies(HttpServletResponse response){
         //HttpServletRequest 装请求信息的类
         //HttpServletResponse 装响应信息的类
@@ -34,7 +34,7 @@ public class MyGetMethod {
      * 这是一个需要携带cookies信息才能访问的get请求
      */
     @RequestMapping(value = "/get/with/cookies", method = RequestMethod.GET)
-    @ApiOperation(value = "这是一个需要携带正确的cookies才能访问的接口", httpMethod = "Get")
+    @ApiOperation(value = "这是一个需要携带正确的cookies才能访问的接口", httpMethod = "GET")
     public String getWithCookies(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
         if (Objects.isNull(cookies)){
@@ -54,7 +54,7 @@ public class MyGetMethod {
      * 业务场景：模拟获取商品列表
      */
     @RequestMapping(value = "get/with/param", method = RequestMethod.GET)
-    @ApiOperation(value = "需要携带参数才能访问的get接口实现方式一", httpMethod = "Get")
+    @ApiOperation(value = "需要携带参数才能访问的get接口实现方式一", httpMethod = "GET")
     public Map<String,Integer> getList(@RequestParam Integer start,
                                        @RequestParam Integer end){
         Map<String, Integer> myList = new HashMap<>();
@@ -70,9 +70,9 @@ public class MyGetMethod {
      *实现方式二：需要携带参数访问的get请求
      */
     @RequestMapping(value = "/get/with/param/{start}/{end}")
-    @ApiOperation(value = "这是必须携带参数的get请求实现方式二", httpMethod = "Get")
-    public Map myGetList(@PathVariable Integer start,
-                         @PathVariable Integer end){
+    @ApiOperation(value = "这是必须携带参数的get请求实现方式二", httpMethod = "GET")
+    public Map<String, Integer> myGetList(@PathVariable Integer start,
+                                          @PathVariable Integer end){
 
         Map<String, Integer> myList = new HashMap<>();
 
